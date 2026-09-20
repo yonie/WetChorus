@@ -1,0 +1,83 @@
+{
+  "panel": {
+    "size": [
+      768,
+      512
+    ]
+  },
+  "knobs": {
+    "speed": {
+      "origin": [
+        34,
+        178
+      ],
+      "size": [
+        131,
+        131
+      ],
+      "frames": 65,
+      "tag": "kSpeedParam"
+    },
+    "mode": {
+      "origin": [
+        296,
+        178
+      ],
+      "size": [
+        131,
+        131
+      ],
+      "frames": 65,
+      "tag": "kModeParam"
+    }
+  },
+  "meters": {
+    "kInMeter": {
+      "origin": [
+        485,
+        192
+      ],
+      "size": [
+        21,
+        185
+      ],
+      "segments": 16
+    },
+    "kOutMeterL": {
+      "origin": [
+        620,
+        192
+      ],
+      "size": [
+        21,
+        185
+      ],
+      "segments": 16
+    },
+    "kOutMeterR": {
+      "origin": [
+        682,
+        192
+      ],
+      "size": [
+        20,
+        185
+      ],
+      "segments": 16
+    }
+  },
+  "depth": {
+    "origin": [
+      185,
+      159
+    ],
+    "size": [
+      94,
+      136
+    ],
+    "frame": "0,42,94,136",
+    "button": "20.0,51.5,74.0,126.5",
+    "led": "38,22,57,41",
+    "glow": "18,2,77,61"
+  }
+}
