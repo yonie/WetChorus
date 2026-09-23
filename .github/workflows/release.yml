@@ -178,7 +178,8 @@ jobs:
       - name: Create ZIP archive
         run: |
           cd build
-          zip -r ../WetChorus-${{ github.ref_name }}.zip WetChorus.vst3
+          cp ../packaging/README.txt .
+          zip -r ../WetChorus-${{ github.ref_name }}.zip WetChorus.vst3 README.txt
           ls -la ../WetChorus-${{ github.ref_name }}.zip
 
       - name: Create Release
