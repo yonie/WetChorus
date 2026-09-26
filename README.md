@@ -94,7 +94,7 @@ This is a common issue with free audio plugins on macOS. You'll encounter the sa
 2. **Leave MODE at CHORUS** to start. The two voices sweep against each other and that is the wide sound
 3. **Set SPEED** for how fast it moves - around 5 is a slow, obvious chorus
 4. **Press DEEP** when you want the richer sweep. Out is the gentler one, and on a busy source it is usually the one you want
-5. **Turn MODE down** for less width and more straightforward pitch movement. At hard left both voices move together and it is pure vibrato
+5. **Turn MODE down** for less width and more straightforward pitch movement. At hard left both voices move together and it is pure vibrato. Vibrato bends pitch more the faster it runs: below about 4 on SPEED it is barely audible, so turn SPEED up (and press DEEP) for a clear vibrato
 6. **Automate** any of the three; MODE in particular is worth a slow sweep
 
 **There is no mix control, and there is no dry signal.** Both outputs are the modulated voice at every setting of every control - that is what the name means. If you want the dry signal back, use a parallel track or the DAW's own wet/dry.
