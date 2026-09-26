@@ -252,15 +252,9 @@ jobs:
           body: |
             **WetChorus 1.0.0**
 
-            A bucket-brigade stereo chorus, modelled as the circuit rather than as a delay line with an LFO on it - the moving clock, the compander breathing and the audible noise floor of the chorus built into a 1970s solid-state guitar combo.
+            A stereo chorus from a modelled bucket-brigade circuit. The sweep drifts and the circuit noise is left in, like the analogue original. It has SPEED, DEPTH and MODE controls, with MODE running from vibrato to chorus.
 
-            **100% wet.** There is no dry signal on either output at any setting. The width comes from two modulated voices moving against each other, not from a wet one against a dry one, so it does the same job on an insert as on a send.
-
-            **One knob from vibrato to chorus.** MODE is not a two-position switch: it sweeps the LFO phase between the two voices, together at VIB and opposed at CHORUS, so every position on it is a real sound. The hardware has two settings.
-
-            The clock is what moves, not an abstract delay time - a bucket-brigade line's delay is stages over twice the clock and its bandwidth is half of it, so the top end brightens and darkens in step with the pitch movement. 5.8 dB of swing at 9 kHz on DEEP.
-
-            Windows, macOS (Intel and Apple Silicon) and Linux in one download.
+            VST3 for Windows, macOS and Linux, and an Audio Unit for Logic and GarageBand. The macOS builds are signed and notarised by Apple, so they open without a warning.
 
             ### Resizing the panel
 
