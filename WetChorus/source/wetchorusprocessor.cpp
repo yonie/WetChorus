@@ -60,9 +60,22 @@ tresult PLUGIN_API WetChorusProcessor::setActive(TBool state)
 }
 
 //------------------------------------------------------------------------
+// All four mono/stereo layouts are accepted; monobus.h turns mono into the
+// stereo the processor expects. The SDK default would accept anything and
+// leave process() to face a bus it cannot handle.
+tresult PLUGIN_API WetChorusProcessor::setBusArrangements(Vst::SpeakerArrangement* inputs, int32 numIns,
+                                            Vst::SpeakerArrangement* outputs, int32 numOuts)
+{
+    if (!Wet::MonoBus::accepts(inputs, numIns, outputs, numOuts))
+        return kResultFalse;
+    return AudioEffect::setBusArrangements(inputs, numIns, outputs, numOuts);
+}
+
+//------------------------------------------------------------------------
 tresult PLUGIN_API WetChorusProcessor::setupProcessing(Vst::ProcessSetup& newSetup)
 {
     engine.prepare(newSetup.sampleRate, newSetup.maxSamplesPerBlock);
+    monoBus.prepare(newSetup.maxSamplesPerBlock);
     return AudioEffect::setupProcessing(newSetup);
 }
 
@@ -134,19 +147,10 @@ tresult PLUGIN_API WetChorusProcessor::process(Vst::ProcessData& data)
     Vst::AudioBusBuffers& input = data.inputs[0];
     Vst::AudioBusBuffers& output = data.outputs[0];
 
-    if (input.numChannels < 2 || output.numChannels < 2)
-    {
-        for (int32 c = 0; c < output.numChannels; ++c)
-            std::memset(output.channelBuffers32[c], 0,
-                        data.numSamples * sizeof(Vst::Sample32));
-        output.silenceFlags = ((uint64)1 << output.numChannels) - 1;
+    // Mono buses become stereo here: see monobus.h.
+    float *inL, *inR, *outL, *outR;
+    if (!monoBus.begin(input, output, data.numSamples, inL, inR, outL, outR))
         return kResultOk;
-    }
-
-    float* inL = input.channelBuffers32[0];
-    float* inR = input.channelBuffers32[1];
-    float* outL = output.channelBuffers32[0];
-    float* outR = output.channelBuffers32[1];
 
     // IN reads the MONO SUM, not the left channel. That is what the circuit is
     // fed, and it is also the honest reading: on a wide stereo source the sum
@@ -184,6 +188,7 @@ tresult PLUGIN_API WetChorusProcessor::process(Vst::ProcessData& data)
         sendMeter(kOutMeterR, outPeakR.load(), oldOutR);
     }
 
+    monoBus.end(output, data.numSamples, outL, outR);
     output.silenceFlags = 0;
     return kResultOk;
 }
