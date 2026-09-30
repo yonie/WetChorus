@@ -7,7 +7,9 @@
 
 A bucket-brigade stereo chorus VST3 plugin, modelled as the circuit rather than as a delay line with an LFO on it, with the moving clock, compander breathing and audible noise floor of the chorus built into a 1970s solid-state guitar combo.
 
-![WetChorus Plugin Screenshot](docs/panel.png)
+**Download:** [wetvst.com/wetchorus](https://wetvst.com/wetchorus/)
+
+[![WetChorus Plugin Screenshot](docs/panel.png)](https://wetvst.com/wetchorus/)
 
 > **Panel too big or too small?** Right-click anywhere on the panel and pick **UI Zoom** - 75%, 100% or 125%.
 
@@ -23,7 +25,7 @@ A bucket-brigade stereo chorus VST3 plugin, modelled as the circuit rather than 
 
 ### Windows
 
-1. **Download** the latest release from [GitHub Releases](https://github.com/yonie/WetChorus/releases)
+1. **Download** the latest release from [wetvst.com](https://wetvst.com/wetchorus/) or [GitHub Releases](https://github.com/yonie/WetChorus/releases)
 2. **Extract** the ZIP file
 3. **Copy** `WetChorus.vst3` to your VST3 folder:
    - User: `C:\Users\[Username]\Documents\VST3\`
@@ -32,7 +34,7 @@ A bucket-brigade stereo chorus VST3 plugin, modelled as the circuit rather than 
 
 ### Linux
 
-1. **Download** the latest release from [GitHub Releases](https://github.com/yonie/WetChorus/releases)
+1. **Download** the latest release from [wetvst.com](https://wetvst.com/wetchorus/) or [GitHub Releases](https://github.com/yonie/WetChorus/releases)
 2. **Extract** the ZIP file
 3. **Copy** `WetChorus.vst3` to your VST3 folder:
    - User: `~/.vst3/`
@@ -41,7 +43,7 @@ A bucket-brigade stereo chorus VST3 plugin, modelled as the circuit rather than 
 
 ### macOS
 
-1. **Download** the latest release from [GitHub Releases](https://github.com/yonie/WetChorus/releases)
+1. **Download** the latest release from [wetvst.com](https://wetvst.com/wetchorus/) or [GitHub Releases](https://github.com/yonie/WetChorus/releases)
 2. **Extract** the ZIP file
 3. **Copy** `WetChorus.vst3` to your VST3 folder:
    ```

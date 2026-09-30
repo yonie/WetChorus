@@ -252,6 +252,8 @@ jobs:
           body: |
             **WetChorus 1.0.0**
 
+            Product page: https://wetvst.com/wetchorus/
+
             A stereo chorus from a modelled bucket-brigade circuit. The sweep drifts and the circuit noise is left in, like the analogue original. It has SPEED, DEPTH and MODE controls, with MODE running from vibrato to chorus.
 
             VST3 for Windows, macOS and Linux, and an Audio Unit for Logic and GarageBand. The macOS builds are signed and notarised by Apple, so they open without a warning.
