@@ -3,6 +3,7 @@
 //------------------------------------------------------------------------
 
 #include "wetchoruscontroller.h"
+#include "weteditor.h"
 #include "wetchoruscids.h"
 #include "chorusengine.h"
 #include "customviewcreator.h"
@@ -240,7 +241,7 @@ IPlugView* PLUGIN_API WetChorusController::createView(FIDString name)
 {
     if (FIDStringsEqual(name, Vst::ViewType::kEditor))
     {
-        auto* editor = new VSTGUI::VST3Editor(this, "view", "wetchoruseditor.uidesc");
+        auto* editor = new Yonie::WetEditor (this, "view", "wetchoruseditor.uidesc");
 
         // Discrete zoom steps, as the rest of the line. The assets are baked
         // at 1x, so anything above 125% interpolates and goes soft.
