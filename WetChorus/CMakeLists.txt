@@ -12,7 +12,7 @@ endif()
 
 project(WetChorus
     # This is your plug-in version number. Change it here only.
-    VERSION 1.0.0.0
+    VERSION 1.0.1.0
     DESCRIPTION "WetChorus VST 3 Plug-in"
 )
 
