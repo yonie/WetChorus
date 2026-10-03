@@ -245,7 +245,10 @@ IPlugView* PLUGIN_API WetChorusController::createView(FIDString name)
 
         // Discrete zoom steps, as the rest of the line. The assets are baked
         // at 1x, so anything above 125% interpolates and goes soft.
-        editor->setAllowedZoomFactors({0.75, 1.0, 1.25});
+        editor->setAllowedZoomFactors({0.5, 0.75, 1.0, 1.25});
+        // Opens at 75%: at 100% the panels are large on most screens. The zoom is not
+        // saved, so every window opens here and nothing stored depends on it.
+        editor->setZoomFactor(0.75);
         return editor;
     }
     return nullptr;
