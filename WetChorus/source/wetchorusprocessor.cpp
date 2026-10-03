@@ -183,9 +183,9 @@ tresult PLUGIN_API WetChorusProcessor::process(Vst::ProcessData& data)
             }
         };
 
-        sendMeter(kInMeter, inPeak.load(), oldIn);
-        sendMeter(kOutMeterL, outPeakL.load(), oldOutL);
-        sendMeter(kOutMeterR, outPeakR.load(), oldOutR);
+        sendMeter(kInMeter, Meter::encode(inPeak.load()), oldIn);
+        sendMeter(kOutMeterL, Meter::encode(outPeakL.load()), oldOutL);
+        sendMeter(kOutMeterR, Meter::encode(outPeakR.load()), oldOutR);
     }
 
     monoBus.end(output, data.numSamples, outL, outR);

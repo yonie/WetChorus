@@ -8,6 +8,7 @@
 #include "chorusengine.h"
 #include "wetchoruscids.h"
 #include "monobus.h"
+#include "meterlevel.h"
 #include <atomic>
 
 namespace Yonie {
