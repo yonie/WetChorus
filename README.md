@@ -5,21 +5,22 @@
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
 [![Version](https://img.shields.io/github/v/release/yonie/WetChorus?label=version&color=orange)](https://github.com/yonie/WetChorus/releases/latest)
 
-A bucket-brigade stereo chorus VST3 plugin, modelled as the circuit rather than as a delay line with an LFO on it, with the moving clock, compander breathing and audible noise floor of the chorus built into a 1970s solid-state guitar combo.
+Give your tracks more depth and swirl using this modern recreation of a classic 1970s guitar combo amp circuit.
 
 **Download:** [wetvst.com/wetchorus](https://wetvst.com/wetchorus/)
 
 [![WetChorus Plugin Screenshot](docs/panel.png)](https://wetvst.com/wetchorus/)
 
-> **Panel too big or too small?** Right-click anywhere on the panel and pick **UI Zoom** - 75%, 100% or 125%.
+> **Panel too big or too small?** Right-click anywhere on the panel and pick **UI Zoom**, from 50% to 125%.
 
 ## Features
 
-- **100% Wet**: Both outputs are the modulated voice at every setting - the width comes from two voices moving against each other, not wet against dry. No mix control
-- **One Knob From Vibrato To Chorus**: MODE sweeps the LFO phase between the voices - together at VIB, a quarter cycle apart in the middle, opposed at CHORUS
-- **Modelled As The Circuit**: The LFO drives the delay line's clock, not a delay time, so the top end brightens and darkens with the pitch movement - 5.8 dB of swing at 9 kHz. Compander breathing, drive-dependent distortion and an audible noise floor at -95 dBFS
-- **Two Knobs And A Button**: SPEED, MODE and a latching DEEP. 17 detents per knob, one per painted mark - hold Shift for 65
-- **Mono In, Stereo Out**: The circuit has one input and builds its stereo image itself. Input and output metering, full VST3 automation, and UI Zoom at 75%, 100% or 125%
+- Seamlessly blend from Vibrato to Chorus using the innovative rotary control
+- Use the speed to go from slow detunes to fast wobble
+- Use the DEPTH control for an obvious or a more subtle effect
+- Real-time input and output LED metering
+- Resizable panel: right-click and zoom from 50% to 125%
+
 
 ## Download & Installation
 
@@ -102,7 +103,7 @@ Because CHORUS is antiphase, summing it to mono cancels most of the movement - t
 - **Wheel**: one detent per notch, or one fine step with Shift held
 - **Shift-drag**: fine adjust, four steps inside every detent
 - **Click DEEP**: latches in and out; the lamp above it shows which
-- **Right-click the panel**: UI Zoom - 75%, 100% or 125%
+- **Right-click the panel**: UI Zoom, from 50% to 125%
 
 ## Building from Source
 

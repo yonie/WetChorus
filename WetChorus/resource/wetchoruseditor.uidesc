@@ -36,9 +36,6 @@
 		      size="21, 185"
 		      num-segments="16"
 		      segment-gap="3"
-		      db-min="-60"
-		      db-max="15"
-		      db-thresholds="-60, -48, -42, -36, -30, -24, -21, -18, -15, -12, -9, -6, -3, 0, 3, 6"
 		      horizontal="false"
 		      transparent="false"/>
 
@@ -48,9 +45,6 @@
 		      size="21, 185"
 		      num-segments="16"
 		      segment-gap="3"
-		      db-min="-60"
-		      db-max="15"
-		      db-thresholds="-60, -48, -42, -36, -30, -24, -21, -18, -15, -12, -9, -6, -3, 0, 3, 6"
 		      horizontal="false"
 		      transparent="false"/>
 
@@ -60,9 +54,6 @@
 		      size="20, 185"
 		      num-segments="16"
 		      segment-gap="3"
-		      db-min="-60"
-		      db-max="15"
-		      db-thresholds="-60, -48, -42, -36, -30, -24, -21, -18, -15, -12, -9, -6, -3, 0, 3, 6"
 		      horizontal="false"
 		      transparent="false"/>
 

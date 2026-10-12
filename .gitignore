@@ -78,3 +78,6 @@ vst3sdk/build/
 vst3sdk/out/
 # Measurement harness output
 build-tools/
+
+# Release build tree
+*/build-rel/

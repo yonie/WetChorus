@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include <vector>
-
 #include "vstgui/lib/cview.h"
 #include "vstgui/lib/controls/ccontrol.h"
 #include "vstgui/lib/cdrawcontext.h"
@@ -14,7 +12,8 @@ namespace Yonie {
 
 //------------------------------------------------------------------------
 // LEDMeterView - Custom 80's style LED segment meter
-// Displays 12 discrete LED segments: 8 green, 2 yellow, 2 red
+// A row of LED blocks on the line's one meter scale; the scale and the colour
+// of each block come from meterlevel.h, the block count from the .uidesc.
 //------------------------------------------------------------------------
 class LEDMeterView : public VSTGUI::CControl
 {
@@ -43,34 +42,6 @@ public:
     void setReductionScheme(bool on) { reduction = on; }
     bool isReductionScheme() const { return reduction; }
 
-    // Map the incoming value as dB against the scale PRINTED BESIDE THE METER,
-    // rather than linearly across the segments.
-    //
-    // Linear is what this did, and it disagrees with its own panel: the art
-    // prints +18 at the top and -48 at the bottom, but a linear map puts half
-    // scale - which is -6 dBFS - at the middle segment, so a healthy signal lit
-    // three LEDs and read as nearly silent. A meter that does not agree with
-    // the numbers next to it is worse than no meter.
-    //
-    // Off by default, so a meter with no printed scale keeps the old
-    // behaviour and nothing already shipped moves.
-    void setDbRange(double lo, double hi) { dbLo = lo; dbHi = hi; dbScale = hi > lo; }
-    bool hasDbRange() const { return dbScale; }
-
-    // The dB each segment stands for, lowest first, one per segment
-    // (db-thresholds in the .uidesc). The line's ladder steps 3 dB near the top
-    // so +3 and +6 read the same on every plug-in; empty falls back to even
-    // steps across the dB range.
-    void setDbThresholds(const std::vector<double>& db) { thresholds = db; }
-    double segmentDb(int i) const
-    {
-        if (static_cast<int>(thresholds.size()) == numSegments)
-            return thresholds[i];
-        return dbLo + i * (dbHi - dbLo) / (numSegments - 1);
-    }
-    double dbMin() const { return dbLo; }
-    double dbMax() const { return dbHi; }
-
     // Number of segments lit for the current value.
     int litSegments() const;
     
@@ -87,9 +58,6 @@ protected:
     bool isHorizontal = true;
     bool inverted = false;
     bool reduction = false;
-    bool dbScale = false;
-    std::vector<double> thresholds;
-    double dbLo = -48.0, dbHi = 18.0;
 
     // The GR strip's amber. Warmer than the level meters' yellow, so the two
     // do not read as the same lamp doing two jobs.
@@ -97,7 +65,7 @@ protected:
     VSTGUI::CColor amberDark{44, 31, 8, 255};
     
     // Color definitions for 80's LED look
-    // Green zone (segments 0-7)
+    // Green
     // The panel art paints every LED lit, so the meter must black its own
     // window out before drawing. Without this the painted LEDs show through
     // the gaps between segments as bright slivers and the meter reads as
@@ -113,11 +81,11 @@ protected:
     VSTGUI::CColor greenLit{0, 255, 0, 255};
     VSTGUI::CColor greenDark{10, 42, 10, 255};
     
-    // Yellow zone (segments 8-9)
+    // Yellow
     VSTGUI::CColor yellowLit{255, 255, 0, 255};
     VSTGUI::CColor yellowDark{42, 42, 10, 255};
     
-    // Red zone (segments 10-11)
+    // Red
     VSTGUI::CColor redLit{255, 0, 0, 255};
     VSTGUI::CColor redDark{42, 10, 10, 255};
 };

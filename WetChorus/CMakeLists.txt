@@ -78,7 +78,7 @@ smtg_target_configure_version_file(WetChorus)
 if(SMTG_MAC)
     smtg_target_set_bundle(WetChorus
         BUNDLE_IDENTIFIER org.yonie.vst3.wetchorus
-        COMPANY_NAME "Yonie"
+        COMPANY_NAME "WET VST"
     )
     smtg_target_set_debug_executable(WetChorus
         "/Applications/VST3PluginTestHost.app"
