@@ -55,7 +55,7 @@ jobs:
           WetChorus/build/bin/Release/validator WetChorus/build/VST3/Release/WetChorus.vst3
 
   build-macos:
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

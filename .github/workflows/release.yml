@@ -61,7 +61,7 @@ jobs:
           retention-days: 1
 
   build-macos:
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -132,7 +132,7 @@ jobs:
 
   merge-and-release:
     needs: [build-windows, build-linux, build-macos, build-au]
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -250,15 +250,14 @@ jobs:
           # The Installation block below is REQUIRED and stays: people land on the
           # release page from an aggregator with no idea what to do with a .vst3.
           body: |
-            **WetChorus 1.1.0**
+            **WetChorus 1.1.1**
 
             Product page: https://wetvst.com/wetchorus/
 
             What's new:
 
-            - added 50% zoom percentage for even smaller plugin GUI (so you can fit more plugins on your screen)
-            - plugins now open on 75% scale by default, right click a panel to change it's size any time
-            - fixed metering display across the line of plugins. 1 red LED for OVR
+            - Linux: the plug-in now loads on systems without `libxcb-cursor` installed, such as a fresh Linux Mint.
+            - The sound and saved settings are unchanged.
 
             ### Resizing the panel
 
